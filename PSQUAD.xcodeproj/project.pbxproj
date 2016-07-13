@@ -12,6 +12,13 @@
 		A95EE68E1D348FAC00CDB6ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A95EE68C1D348FAC00CDB6ED /* Main.storyboard */; };
 		A95EE6901D348FAC00CDB6ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A95EE68F1D348FAC00CDB6ED /* Assets.xcassets */; };
 		A95EE6931D348FAC00CDB6ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A95EE6911D348FAC00CDB6ED /* LaunchScreen.storyboard */; };
+		A95EE69B1D348FD600CDB6ED /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A95EE69A1D348FD600CDB6ED /* Alamofire.framework */; };
+		A95EE69F1D348FF100CDB6ED /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95EE69E1D348FF100CDB6ED /* User.swift */; };
+		A95EE6A11D348FF700CDB6ED /* Presence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95EE6A01D348FF700CDB6ED /* Presence.swift */; };
+		A9F425521D3493E700C423E0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F425511D3493E700C423E0 /* RxSwift.framework */; };
+		A9F425571D34B70A00C423E0 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F425561D34B70A00C423E0 /* Network.swift */; };
+		A9F425591D34B8AD00C423E0 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F425581D34B8AD00C423E0 /* Request.swift */; };
+		A9F4255B1D355DE900C423E0 /* PSNRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F4255A1D355DE900C423E0 /* PSNRequests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +29,13 @@
 		A95EE68F1D348FAC00CDB6ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A95EE6921D348FAC00CDB6ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A95EE6941D348FAC00CDB6ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A95EE69A1D348FD600CDB6ED /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		A95EE69E1D348FF100CDB6ED /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A95EE6A01D348FF700CDB6ED /* Presence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presence.swift; sourceTree = "<group>"; };
+		A9F425511D3493E700C423E0 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		A9F425561D34B70A00C423E0 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		A9F425581D34B8AD00C423E0 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		A9F4255A1D355DE900C423E0 /* PSNRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSNRequests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9F425521D3493E700C423E0 /* RxSwift.framework in Frameworks */,
+				A95EE69B1D348FD600CDB6ED /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +54,8 @@
 		A95EE67C1D348FAC00CDB6ED = {
 			isa = PBXGroup;
 			children = (
+				A9F425511D3493E700C423E0 /* RxSwift.framework */,
+				A95EE69A1D348FD600CDB6ED /* Alamofire.framework */,
 				A95EE6871D348FAC00CDB6ED /* PSQUAD */,
 				A95EE6861D348FAC00CDB6ED /* Products */,
 			);
@@ -54,6 +72,8 @@
 		A95EE6871D348FAC00CDB6ED /* PSQUAD */ = {
 			isa = PBXGroup;
 			children = (
+				A9F425551D34B69200C423E0 /* Network */,
+				A95EE69D1D348FEB00CDB6ED /* Model */,
 				A95EE6881D348FAC00CDB6ED /* AppDelegate.swift */,
 				A95EE68A1D348FAC00CDB6ED /* ViewController.swift */,
 				A95EE68C1D348FAC00CDB6ED /* Main.storyboard */,
@@ -62,6 +82,25 @@
 				A95EE6941D348FAC00CDB6ED /* Info.plist */,
 			);
 			path = PSQUAD;
+			sourceTree = "<group>";
+		};
+		A95EE69D1D348FEB00CDB6ED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A95EE69E1D348FF100CDB6ED /* User.swift */,
+				A95EE6A01D348FF700CDB6ED /* Presence.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A9F425551D34B69200C423E0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A9F425561D34B70A00C423E0 /* Network.swift */,
+				A9F425581D34B8AD00C423E0 /* Request.swift */,
+				A9F4255A1D355DE900C423E0 /* PSNRequests.swift */,
+			);
+			name = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +113,7 @@
 				A95EE6811D348FAC00CDB6ED /* Sources */,
 				A95EE6821D348FAC00CDB6ED /* Frameworks */,
 				A95EE6831D348FAC00CDB6ED /* Resources */,
+				A95EE69C1D348FDB00CDB6ED /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -130,13 +170,36 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A95EE69C1D348FDB00CDB6ED /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A95EE6811D348FAC00CDB6ED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9F4255B1D355DE900C423E0 /* PSNRequests.swift in Sources */,
 				A95EE68B1D348FAC00CDB6ED /* ViewController.swift in Sources */,
 				A95EE6891D348FAC00CDB6ED /* AppDelegate.swift in Sources */,
+				A9F425571D34B70A00C423E0 /* Network.swift in Sources */,
+				A95EE6A11D348FF700CDB6ED /* Presence.swift in Sources */,
+				A9F425591D34B8AD00C423E0 /* Request.swift in Sources */,
+				A95EE69F1D348FF100CDB6ED /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +314,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PSQUAD/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jameslintaylor.PSQUAD;
@@ -262,6 +329,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PSQUAD/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jameslintaylor.PSQUAD;
@@ -288,6 +359,7 @@
 				A95EE6991D348FAC00CDB6ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

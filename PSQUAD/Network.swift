@@ -26,4 +26,9 @@ enum Network {
             serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies)
         )
     }()
+    
+    /// 'Alamofire.Manager' for default remote networks
+    static let remote = Alamofire.Manager.sharedInstance
 }
+
+

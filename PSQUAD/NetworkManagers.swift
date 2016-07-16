@@ -1,5 +1,5 @@
 //
-//  Reach.swift
+//  NetworkManagers.swift
 //  PSQUAD
 //
 //  Created by James Taylor on 2016-07-12.
@@ -10,12 +10,12 @@ import Foundation
 
 import Alamofire
 
-enum Network {
+extension Alamofire.Manager {
     
     /// 'Alamofire.Manager' for my local network that disables https evaluation
     static let local: Alamofire.Manager = {
         let serverTrustPolicies: [String: ServerTrustPolicy] = [
-            "192.168.0.2": .DisableEvaluation
+            "192.168.2.2": .DisableEvaluation
         ]
         
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
@@ -30,5 +30,3 @@ enum Network {
     /// 'Alamofire.Manager' for default remote networks
     static let remote = Alamofire.Manager.sharedInstance
 }
-
-

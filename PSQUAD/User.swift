@@ -9,23 +9,26 @@
 import Foundation
 
 /// Model for a single PSN user
-struct User {
+struct User : JSONMappable {
     
     let id: String
     let avatarURL: String
     let presence: Presence
+}
+
+extension User {
     
-    init?(jsonDict: JSONDictionary) {
+    init?(json: JSON) {
         
-        guard let id = jsonDict["onlineId"] as? String,
-            let avatarURL = jsonDict["avatarUrl"] as? String else { return nil }
+        guard let jsonDict = json as? JSONDictionary,
+            id = jsonDict["onlineId"] as? String,
+            avatarURL = jsonDict["avatarUrl"] as? String else { return nil }
         
         self.id = id
         self.avatarURL = avatarURL
         
-        if
-            let presenceDict = jsonDict["presence"] as? JSONDictionary,
-            let presence = Presence(jsonDict: presenceDict) {
+        if let presenceJSON = jsonDict["presence"],
+            presence = Presence(json: presenceJSON) {
             self.presence = presence
         } else {
             self.presence = .unknown
@@ -35,4 +38,15 @@ struct User {
 
 extension User: CustomStringConvertible {
     var description: String { return "\(id)" }
+}
+
+extension User {
+    
+    var isOnline: Bool {
+        
+        switch self.presence {
+        case .online: return true
+        default: return false
+        }
+    }
 }

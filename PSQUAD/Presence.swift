@@ -9,15 +9,19 @@
 import Foundation
 
 /// State of a user's presence at a moment in time
-enum Presence {
+enum Presence: JSONMappable {
     
     case unknown
     case online(game: String?)
     case offline(lastOnline: NSDate?)
+}
+
+extension Presence {
     
-    init?(jsonDict: JSONDictionary) {
+    init?(json: JSON) {
         
-        guard let primaryInfo = jsonDict["primaryInfo"] as? JSONDictionary,
+        guard let jsonDict = json as? JSONDictionary,
+            primaryInfo = jsonDict["primaryInfo"] as? JSONDictionary,
             onlineStatus = primaryInfo["onlineStatus"] as? String else { return nil }
         
         switch onlineStatus {
